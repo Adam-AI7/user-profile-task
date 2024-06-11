@@ -64,3 +64,15 @@
   tr{
     cursor: pointer;
   }
+  .custom-boxshadow{
+    box-shadow:var(--box-shadow-1)
+  }
+
+.headerBg{
+    background-color: var(--hearder-bg);
+}
+  // custom variables 
+  :root{
+    --box-shadow-1:rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  }
