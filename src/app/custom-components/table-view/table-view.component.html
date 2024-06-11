@@ -1,0 +1,49 @@
+
+<!-- <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>Education</th>
+        <th>Work</th>
+        <th>Verified</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let profile of tableSource" (click)="selectProfile(profile)">
+        <td>{{ profile.username }}</td>
+        <td>{{ profile.location }}</td>
+        <td>{{ profile.email }}</td>
+        <td>{{ profile.gender }}</td>
+        <td>{{ profile.education }}</td>
+        <td>{{ profile.work }}</td>
+        <td>{{ profile.verifiedStatus }}</td>
+      </tr>
+    </tbody>
+  </table> -->
+  <table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Education</th>
+            <th>Work</th>
+            <th>Verified</th>
+          </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let profile of tableSource | filter:search" (click)="selectProfile(profile)">
+            <td>{{ profile.username }}</td>
+            <td>{{ profile.location }}</td>
+            <td>{{ profile.email }}</td>
+            <td>{{ profile.gender }}</td>
+            <td>{{ profile.education }}</td>
+            <td>{{ profile.work }}</td>
+            <td>{{ profile.verifiedStatus }}</td>
+          </tr>
+    </tbody>
+  </table>

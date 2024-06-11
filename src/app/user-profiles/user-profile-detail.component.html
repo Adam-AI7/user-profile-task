@@ -1,0 +1,63 @@
+<div class="container fullScreen" style="height: 85vh;">
+    <div style="padding: 3px;">
+        <button [routerLink]="'/all-profiles'" class="btn btn-success">
+            Back
+        </button>
+    </div>
+    <!-- card -->
+         <div class="card" style="width: 100%;" *ngIf="userProfile;else noDetail">
+            <!-- header -->
+    <div class="header row" style="background-color: aliceblue;">
+             <!-- pic -->
+    <div class="col-4">
+        <img style="height: 200px;width: 200px;border-radius: 50%;
+    padding: 5px;" [src]="userProfile.profilePic" alt="profile pic">
+    </div>
+         <!-- pic -->
+    <div class="col-8">
+     <div class="userTag   ">
+        <h3>{{userProfile.fullName}}</h3>
+        <div style="color: #ceaa4d;">{{userProfile.work}}</div>
+     </div>
+    </div>
+    <div>
+    
+    </div>
+    </div>
+    <div class="card-content" >
+      <div style="height: 200px;" class="row pl-2 pr-2">
+          <div class="form-group col-6">
+            <label for="disabledTextInput">Hobbies</label>
+            <input type="text" id="disabledTextInput" class="form-control" [placeholder]="  userProfile.hobbies | truncate">
+          </div>
+          <div class="form-group col-6">
+            <label for="disabledTextInput">Languages</label>
+            <input type="text" id="disabledTextInput" class="form-control" [placeholder]="  userProfile.languages | truncate">
+          </div>
+          <div class="form-group col-6">
+            <label for="disabledTextInput">Status</label>
+            <input type="text" id="disabledTextInput" class="form-control" [placeholder]="  userProfile.statusMessage | truncate">
+          </div>
+          <div class="form-group col-6">
+            <label for="disabledTextInput">Relationship</label>
+            <input type="text" id="disabledTextInput" class="form-control" [placeholder]="  userProfile.relationshipStatus | truncate">
+          </div>
+      </div>
+    </div>
+    <div class="card-footer">
+   <span>   {{userProfile.followersCount}}-{{userProfile.followingCount}} </span>
+   <span>last active:{{userProfile.lastActive}}</span>
+    </div>
+
+         </div>
+    
+        <ng-template #noDetail>
+            <div class="loading"></div>
+        </ng-template>
+    
+        </div>
+
+
+
+
+        
